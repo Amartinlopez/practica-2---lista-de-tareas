@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lista de tareas</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <header>
+            <div class="tituloPagina">- Lista de tareas -</div>
+            <div class="insert">
+                <form action="#" id ="form" method="get">
+                    
+                    <input type="text" id="tituloTarea" placeholder="Introduce la tarea">
+
+                    <select id="prioridad" required>
+                        <option value="nulo">Prioridad</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="diaria">Diaria</option>
+                        <option value="mensual">Mensual</option>
+                    </select>
+                    <div class="botonGuardar">
+                        <input type="submit" value="Guardar" id="guardar">
+                    </div>
+                </form>
+                <p id="mensaje"></p>
+            </div>
+            <div class="filter">
+                <select id="prioridadSelect">
+                    <option value="">Todas las tareas</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+
+                <input type="text" placerholder="Tarea a buscar" id="search">
+                <p id="mensajeFiltro"></p>
+
+            </div>
+        </header>
+
+        <main>
+            <section class="notareas" id="notareas">
+
+            </section>
+            <section class="tareas" id="tareas">
+
+            </section>
+        </main>
+
+        <footer>
+            <p>APP Lista de tareas</p>
+        </footer>
+
+
+    </div>
+
+    <script src="js/listadetareas.js"></script>
+</body>
+
+</html>
