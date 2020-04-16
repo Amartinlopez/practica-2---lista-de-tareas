@@ -1,100 +1,130 @@
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina+2|Montserrat&display=swap');
 
 *{
 	box-sizing: border-box;
+	background-color: none;
 }
-body{
-	font-family: Arial, sans-serif;
+html, body{
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1em;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+} 
+
+.container-fluid{
+	height: 100%;
+}
+.contain{
+	height: 100%;
 }
 
-#wrapper{
-	max-width: 80%;
-	margin: 0 auto;
-	 
+
+/* NEW & SEARCH */
+.newSearch{
+
+	background-color: rgb(59, 146, 38);
+	height: 100%;
 }
-header .tituloPagina{
-	display: block;
-	width: 100%;
+.otherTitle{
+	font-size: 1.6em;
+	margin-top: 20px;
+	color:white;
+}
+
+
+/* new */
+.insert select{
+	margin-top: 10px;
+	margin-bottom: 10px;;
+}
+
+select .urg{
+	background-color: rgb(231, 71, 43);
+}
+select .dia{
+	background-color: rgb(252, 252, 49);
+}
+select .mens{
+	background-color: rgb(94, 255, 30);
+}
+
+.insert .saveBtn{
 	color: white;
-	background-color:rgb(21, 26, 51);
-	font-size: 3em;
-	text-align: center;
-	padding: 20px;
-	font-family: 'Satisfy', sans-serif;
+	background-color: rgb(83, 170, 61);
+	border: 1px solid rgb(38, 110, 20);
+	box-shadow: 0px 2px 0 rgb(48, 126, 28), 2px 4px 6px rgb(48, 126, 28);
+	transition: 0.5s;
 }
-header .insert{
-	background-color: rgb(221, 221, 221);
-	border: 2px solid rgb(21, 26, 51);
-	padding: 20px;
-}
-header .insert #tituloTarea{
-	width: 35%;
-	height: 25px;
-	font-size: 0.9em;
-	/* margin: auto 10px */
-}
-header .insert #prioridad{
-	width: 30%;
-	height: 25px;
-	margin-left: 20px;
-}
-header .insert .botonGuardar{
-	width: 30%;
-	height: 40px;
-	display: inline-block;
-	text-align: right;
-}
-header .insert #guardar{
-	width: 50%;
-	height: 40px;
-	margin-right: 15px;
+.insert .saveBtn:hover{
 	color: white;
-	background-color: rgb(21, 26, 51);
+	background-color: rgb(59, 146, 38);
+	border: 1px solid rgb(59, 146, 38);
+	box-shadow: none;
+
+
 }
 
-header .filter{
-	background-color: rgb(21, 26, 51);
-	padding: 10px;
-	display: block;
-	right: 20px;
-}
-
-main .tareas{
-	border-left: 2px solid rgb(21, 26, 51);
-	border-right: 2px solid rgb(21, 26, 51);
-}
-main .tareas article{
-	height: 60px;
-	position: relative;
-	border-bottom: 2px solid rgb(21, 26, 51);
-	padding: 20px 0px 20px 20px;
-	display: flex;
-}
-
-main .tareas h2{
-	width: 80%;
+/* filter */
+.filter p{
 	font-size: 1.5em;
-	font-family: 'Satisfy';
-	
+	margin-top: 20px;
+	color: white
 }
-main .tareas .diaria{
-	background-color: rgb(255, 255, 89);
+.filter select{
+	margin-bottom: 15px;
+	margin-top:10px;
 }
-main .tareas .mensual{
-	background-color: rgb(106, 255, 47);
-}
-main .tareas .urgente{
-	background-color: rgb(255, 67, 34);
+.filter span{
+	height: 38px;
 }
 
-main .tareas article>a{
+
+/* TAREAS */
+
+.title{
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top:
+	10px;
+}
+.tareas .tarea{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.tareas .colorPrioridad{
+	width: 20px;
+	height: 20px;
+	border-radius: 25%;
+	position: absolute;
+	left: 10px;
+	top: 20px;
+}
+.tareas .diaria .colorPrioridad{
+	background-color: rgb(252, 252, 49);
+}
+.tareas .mensual .colorPrioridad{
+	background-color: rgb(94, 255, 30);
+}
+.tareas .urgente .colorPrioridad{
+	background-color: rgb(231, 71, 43);
+}
+.tareas h2{
+	position: relative;
+	left: 40px;
+	top: 10px;
+	font-size: 1.5em;
+	font-family: 'Baloo Bhaina 2', sans-serif;	
+}
+
+.tareas div>a{
     font-family: 'helvetica';
     background-color:green;
     border: 2px solid green;
 	display: block;
-	padding: 20px 0px 20px 20px;
+	padding: 17px 0px 20px 20px;
 	color: white;
 	text-decoration: none;
     width: 100px;
@@ -103,37 +133,40 @@ main .tareas article>a{
 	top: 0px;
 	right: 0px;
 	transition: 1s;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
-main .tareas article>a:hover{
+.tareas div>a:hover{
     width: 120px;
     background-color: rgb(175, 252, 61);
-    color: green;
+	color: green;
+	font-weight: bold;
 }
 
-main .tareas article>a i{
+.tareas div>a i{
     display: none;
     transition: 1s;
     
 }
-main .tareas article>a:hover i{
+.tareas div>a:hover i{
     display: inline-block;
     padding-left: 10px;
     color: green
 
 }
 
-footer{
+/* FOOTER */
+.footer{
 	padding: 10px;
-	background-color: rgb(21, 26, 51);
+	background-color: rgb(32, 32, 32);
 	color: white;
 }
 
+
+/* mensajes */
 #mensaje{
-	text-align: left;
-	color: red;
-	padding-top: 10px;
-	
+	font-size: 1em;	
 }
 
 #mensajeFiltro{
@@ -142,24 +175,10 @@ footer{
 	/* font-weight: bold; */
 }
 
-@media(max-width: 48.063em){
-	header .insert .botonGuardar{
-		width: 150px;
-		height: 40px;
-		display: inline-block;
-		text-align: left;
-		margin-top: 10px;
-		margin-left: 10px;
-	}
-	header .insert #tituloTarea{
-		width: 50%;
-		height: 25px;
-		font-size: 0.9em;
-		/* margin: auto 10px */
-	}
-	header .insert #prioridad{
-		width: 40%;
-		height: 25px;
-		margin-left: 20px;
-	}
+
+/* MEDIAS */
+@media(max-width: 769px){
+	html, body{
+	height: auto;
+}
 }

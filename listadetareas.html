@@ -7,59 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Lista de tareas</title>
 </head>
 
 <body>
-    <div id="wrapper">
+    <div class="container-fluid">
+        <div class="row contain">
+            <div class="col-12 col-md-5 newSearch">
+                <div class="row">
+                    <div class="insert col-12">
+                        <form action="#" id="form" method="get">
 
-        <header>
-            <div class="tituloPagina">- Lista de tareas -</div>
-            <div class="insert">
-                <form action="#" id ="form" method="get">
-                    
-                    <input type="text" id="tituloTarea" placeholder="Introduce la tarea">
+                            <!--  <input type="text" id="tituloTarea" placeholder="Introduce la tarea"> -->
+                            <p class="otherTitle">Introduce tu nueva tarea</p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i
+                                            class="fas fa-pen-fancy"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="tituloTarea" placeholder="Escribe tu tarea"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
 
-                    <select id="prioridad" required>
-                        <option value="nulo">Prioridad</option>
-                        <option value="urgente">Urgente</option>
-                        <option value="diaria">Diaria</option>
-                        <option value="mensual">Mensual</option>
-                    </select>
-                    <div class="botonGuardar">
-                        <input type="submit" value="Guardar" id="guardar">
+                            <select id="prioridad" class="form-control" required>
+                                <option value="nulo">Selecciona su prioridad</option>
+                                <option class="urg" value="urgente">Urgente</option>
+                                <option class="dia" value="diaria">Diaria</option>
+                                <option class="mens" value="mensual">Mensual</option>
+                            </select>
+                            <p id="mensaje"></p>
+                            <div class="d-flex justify-content-end">
+                                <input class=" btn saveBtn" type="submit" value="Guardar" id="guardar">
+                            </div>
+                        </form>
+
                     </div>
-                </form>
-                <p id="mensaje"></p>
+                    <div class="filter col-12">
+                        <p class="otherTitle">Encuentra una tarea</p>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="search" placeholder="Busca por nombre"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <select id="prioridadSelect" class="form-control">
+                            <option value="">Busca por prioridad</option>
+                            <option class="urg" value="urgente">Urgente</option>
+                            <option class="dia" value="diaria">Diaria</option>
+                            <option class="mens" value="mensual">Mensual</option>
+                        </select>
+                        <p id="mensajeFiltro"></p>
+                    </div>
+                </div>
             </div>
-            <div class="filter">
-                <select id="prioridadSelect">
-                    <option value="">Todas las tareas</option>
-                    <option value="urgente">Urgente</option>
-                    <option value="diaria">Diaria</option>
-                    <option value="mensual">Mensual</option>
-                </select>
 
-                <input type="text" placerholder="Tarea a buscar" id="search">
-                <p id="mensajeFiltro"></p>
+            <div class="col-12 col-md-7">
+                <div class=" title">- Lista de tareas -</div>
+                <section class="tareas" id="tareas">
 
+                </section>
             </div>
-        </header>
 
-        <main>
-            <section class="tareas" id="tareas">
+        </div>
 
-            </section>
-        </main>
 
-        <footer>
-            <p>APP Lista de tareas</p>
-        </footer>
 
 
     </div>
 
     <script src="js/listadetareas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,7 +1,3 @@
-
-
-
-
 var listaTareas = new Array();
 
 listaTareas = [
@@ -30,19 +26,12 @@ listaTareas = [
 
 
 var seccionTareas = document.getElementById('tareas')
-
 var mensaje = document.getElementById('mensaje')
-
 var mensajeFiltro = document.getElementById('mensajeFiltro')
-
 var tituloTarea = document.getElementById('tituloTarea')
-
 var btnGuardar = document.getElementById('guardar')
-
 var prioridad = document.getElementById('prioridad')
-
 var busqueda = document.querySelector('#search')
-
 var seleccionarPrioridad = document.getElementById('prioridadSelect')
 
 var eliminar
@@ -68,7 +57,7 @@ btnGuardar.addEventListener('click', e => {
         /* document.getElementById('form').reset() */
 
     } else {
-        mensaje.innerText =''
+        /*mensaje.innerText =''*/
         guardarTarea(nombreTarea, prioridadTarea)
         /* document.getElementById('form').reset() */
     }
@@ -89,15 +78,21 @@ function guardarTarea(pNombre, pPrioridad) {
 }
 
 function pintarTarea(pTarea) {
-    seccionTareas.innerHTML += `<article id="${pTarea.id}" class="${pTarea.prioridad}">
-    <h2>${pTarea.titulo}</h2>
-    <a href="#" title="eliminar" class="eliminar">Hecho<i class="fas fa-check eliminar"></i></a>
-</article>`
-eliminar = document.querySelectorAll('.eliminar')
-for(boton of eliminar){
-    boton.addEventListener('click', eliminarTarea)
-}
-    
+    seccionTareas.innerHTML += `
+                <div id="${pTarea.id}" class="card tarea ${pTarea.prioridad}">
+
+                    <div class="colorPrioridad"></div>
+                    <h2>${pTarea.titulo}</h2>
+                    <a href="#" title="eliminar" class="eliminar">Hecho<i class="fas fa-check eliminar">
+                    </i>
+                    </a>
+                    
+                </div >`
+    eliminar = document.querySelectorAll('.eliminar')
+    for (boton of eliminar) {
+        boton.addEventListener('click', eliminarTarea)
+    }
+
 }
 
 
@@ -114,19 +109,24 @@ function pintarTareas(pListaFiltrada) {
         mensajeFiltro.innerText = ''
 
         pListaFiltrada.forEach(tarea => {
-            seccionTareas.innerHTML += `<article id="${tarea.id}" class="${tarea.prioridad} ">
-            <h2>${tarea.titulo}</h2>
-            <a href="#" title="eliminar" class="eliminar">Hecho<i class="fas fa-check eliminar">
-            </i>
-            </a>
-            </article>`
+            seccionTareas.innerHTML += `
+                <div id="${tarea.id}" class="card tarea ${tarea.prioridad}">
+                    
+                    <div class="colorPrioridad"></div>
+                    <h2>${tarea.titulo}</h2>
+                    <a href="#" title="eliminar" class="eliminar">Hecho<i class="fas fa-check eliminar">
+                    </i>
+                    </a>
+                    
+                </div >`
+
             eliminar = document.querySelectorAll('.eliminar')
 
-            for(boton of eliminar){
+            for (boton of eliminar) {
                 boton.addEventListener('click', eliminarTarea)
             }
 
-            
+
         })
     } else {
         mensajeFiltro.innerText = 'No existen tareas con esas condiciones'
@@ -178,9 +178,9 @@ var tareaArticulo = document.getElementsByTagName('article')
 function eliminarTarea(e) {
     /* console.log(e.target.parentNode) */
 
-for (let i = 0; i< listaTareas.length; i++){
+    for (let i = 0; i < listaTareas.length; i++) {
 
-    /* if(listaTareas[i].id == tareaArticulo[i].id){ */
+        /* if(listaTareas[i].id == tareaArticulo[i].id){ */
 
         /* console.log(tareas.removeChild(e.target.parentNode)) */
         tareas.removeChild(e.target.parentNode);
@@ -188,6 +188,6 @@ for (let i = 0; i< listaTareas.length; i++){
         listaBorradas = new Array()
         listaBorradas = listaTareas.splice(tareaArticulo, 1);
 
-}
+    }
 }
 
